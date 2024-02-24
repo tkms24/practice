@@ -14,7 +14,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        //$products = Product::all();
+        //ページネーションに変更
+        $products = Product::paginate(3);
 
         return view('product.index',['products'=>$products]);
     }
